@@ -1,4 +1,16 @@
+div{
+	text-align:right;
+	width: 500px;
+}
+
 h1{
 	font-size: 17px;
 	backgound-color: #F9F9F9;
+	paddiing: 10px 0;
+}
+
+h3{
+
+	color: #4F4F4F;
+	font-family: Arial;
 }	
