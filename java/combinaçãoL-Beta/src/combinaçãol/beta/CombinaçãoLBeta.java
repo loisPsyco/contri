@@ -1,20 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package combinaçãol.beta;
-//import java.util.Arrays;
+
 import java.util.Scanner;
 /**
  *
  * @author user
  */
 public class CombinaçãoLBeta {
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         
         Scanner in = new Scanner(System.in);
@@ -22,7 +13,8 @@ public class CombinaçãoLBeta {
         int v1[] = new int[3]; 
         int v2[] = new int[3];
         int W[] = new int[3];
-        int a, b, resA[] = new int[3], resB[] = new int[3];
+        int a, b;
+        int resA[] = new int[3], resB[] = new int[3];
         int comb[] = new int[3];
         
         System.out.println("-----------Combinação Linear-----------\n");
@@ -43,12 +35,6 @@ public class CombinaçãoLBeta {
         a = in.nextInt();
         System.out.println("Digite o valor do segundo coeficiente <b>: ");
         b = in.nextInt();
-        
-        /*
-        System.out.println("W("+W[0]+","+W[1]+","+W[2]+")");
-        System.out.println("v1("+v1[0]+","+v1[1]+","+v1[2]+")");
-        System.out.println("v2("+v2[0]+","+v2[1]+","+v2[2]+")");
-        */
         
         System.out.println("\nW = a.v1 + b.v2");
         System.out.println("("+W[0]+","+W[1]+","+W[2]+")" + " = " + a + "." + "("+v1[0]+","+v1[1]+","+v1[2]+")" + " + " +
@@ -73,10 +59,10 @@ public class CombinaçãoLBeta {
         comb[1] = resA[1] + resB[1];
         comb[2] = resA[2] + resB[2];
         
-        if((comb[0] == W[0] && comb[1] == W[1] && comb[2] == W[2]) && (comb[0] != 0 && comb[1] != 0 && comb[2] != 0)){
-            System.out.println("\nHá combinação Linear");
-        }else{
-            System.out.println("\nNão tem combinação linear");
+        if((comb[0] == W[0] && comb[1] == W[1] && comb[2] == W[2] && (comb[0] != 0 || comb[1] != 0 || comb[2] != 0))){
+            System.out.println("\nLinearmente Dependente (LD)");
+        }else if((comb[0] == 0 && comb[1] == 0 && comb[2] == 0)){
+            System.out.println("\nLinearmente Independente (LI)");
         }
 
     }
