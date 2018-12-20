@@ -22,7 +22,7 @@ public class CombinaçãoLBeta {
         int v1[] = new int[3]; 
         int v2[] = new int[3];
         int W[] = new int[3];
-        int a, b, res[] = new int[6];
+        int a, b, resA[] = new int[3], resB[] = new int[3];
         int comb[] = new int[3];
         
         System.out.println("-----------Combinação Linear-----------\n");
@@ -54,12 +54,13 @@ public class CombinaçãoLBeta {
         System.out.println("("+W[0]+","+W[1]+","+W[2]+")" + " = " + a + "." + "("+v1[0]+","+v1[1]+","+v1[2]+")" + " + " +
                            b + "." + "("+v2[0]+","+v2[1]+","+v2[2]+")");
         
-        /*for(int i=0; i<3; i++){
-            res[i] = a * v1[i];
-            for(int j=0; j<3; j++){
-                res[j] = b * v2[j];
-            }
-        }*/
+        for(int i=0; i<3; ++i){
+            resA[i] = a * v1[i];
+        }    
+        for(int i=0; i<3; i++){
+            resB[i] = b * v2[i];
+        }
+        /*
         res[0] = a * v1[0];
         res[1] = a * v1[1];
         res[2] = a * v1[2];
@@ -67,21 +68,17 @@ public class CombinaçãoLBeta {
         res[3] = b * v2[0];
         res[4] = b * v2[1];
         res[5] = b * v2[2];
-        
-        comb[0] = res[0] + res[3];
-        comb[1] = res[1] + res[4];
-        comb[2] = res[2] + res[5];
+        */
+        comb[0] = resA[0] + resB[0];
+        comb[1] = resA[1] + resB[1];
+        comb[2] = resA[2] + resB[2];
         
         if((comb[0] == W[0] && comb[1] == W[1] && comb[2] == W[2]) && (comb[0] != 0 && comb[1] != 0 && comb[2] != 0)){
             System.out.println("\nHá combinação Linear");
         }else{
             System.out.println("\nNão tem combinação linear");
         }
-        /*
-        System.out.println(comb[0]);
-        System.out.println(comb[1]);
-        System.out.println(comb[2]);
-        */
+
     }
     
 }
