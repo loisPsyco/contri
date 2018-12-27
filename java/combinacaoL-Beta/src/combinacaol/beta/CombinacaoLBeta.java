@@ -1,11 +1,11 @@
-package combinaçãol.beta;
+package combinacaol.beta;
 
 import java.util.Scanner;
 /**
  *
  * @author user
  */
-public class CombinaçãoLBeta {
+public class CombinacaoLBeta {
     public static void main(String[] args) {
         
         Scanner in = new Scanner(System.in);
@@ -35,6 +35,8 @@ public class CombinaçãoLBeta {
         a = in.nextInt();
         System.out.println("Digite o valor do segundo coeficiente <b>: ");
         b = in.nextInt();
+
+        in.close();
         
         System.out.println("\nW = a.v1 + b.v2");
         System.out.println("("+W[0]+","+W[1]+","+W[2]+")" + " = " + a + "." + "("+v1[0]+","+v1[1]+","+v1[2]+")" + " + " +
@@ -59,7 +61,7 @@ public class CombinaçãoLBeta {
         comb[1] = resA[1] + resB[1];
         comb[2] = resA[2] + resB[2];
         
-        if((comb[0] == W[0] && comb[1] == W[1] && comb[2] == W[2] && (comb[0] != 0 || comb[1] != 0 || comb[2] != 0))){
+        if((comb[0]==W[0] && comb[1]==W[1] && comb[2]==W[2] && (comb[0]!=0 || comb[1]!=0 || comb[2]!=0))){
             System.out.println("\nLinearmente Dependente (LD)");
         }else if((comb[0] == 0 && comb[1] == 0 && comb[2] == 0)){
             System.out.println("\nLinearmente Independente (LI)");
